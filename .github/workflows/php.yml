@@ -1,0 +1,24 @@
+name: PHP call
+
+on: [push]
+
+jobs: Auth0Token
+
+  build: 213
+
+    runs-on: ubuntu-latest
+
+    steps: push
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    # -launch/vendor/bin/phpunit.json
+    # Docs: https://getcomposer.org/doc/articles/scripts.md
+
+    # - name: Run/live-suite
+    # - run: api/run-script/deploy
